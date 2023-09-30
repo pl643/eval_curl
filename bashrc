@@ -2,7 +2,7 @@
 
 # set EDITOR to whatever vi binary is installed, preffered vi listed in desending order
 for editor in pico nano vi vim nvim; do
-   which $check > /dev/null 2>&1 && export EDITOR=$editor
+   which $editor > /dev/null 2>&1 && export EDITOR=$editor
 done
 
 # for bash-git & msys2 environment both installable with winget install
