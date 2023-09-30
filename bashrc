@@ -2,7 +2,7 @@
 
 # set EDITOR to whatever vi binary is installed, preffered vi listed in desending order
 for editor in pico nano vi vim nvim; do
-   which $editor > /dev/null 2>&1 && export EDITOR=$editor
+  which $editor > /dev/null 2>&1 && export EDITOR=$editor
 done
 
 # for bash-git & msys2 environment both installable with winget install
@@ -18,13 +18,11 @@ msys() {
     which $check > /dev/null 2>&1 && export EDITOR=$editor
   done
  
-  for path in /c/Users/$USER/OneDrive/winbin /c/msys64/usr/bin; do
+  for path in /c/msys64/usr/bin /c/Users/$USER/OneDrive/winbin /c/Users/$USER/OneDrive/winbin/nvim-win64/bin; do
     [ -d $path ] && export PATH=$path:$PATH
   done
-
-  #check="/c/Users/$USER/OneDrive/winbin"; [ -d $check ] && export PATH=$check:$PATH
-  #check="/c/msys64/usr/bin";              [ -d $check ] && export PATH=$check:$PATH
 }
+[ ! -z $MSYS ] && msys
 
 shopt -s autocd # change directory by typing path
 
