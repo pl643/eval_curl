@@ -1,11 +1,6 @@
 # this bashrc is intended to be used with eval "$(curl -L https://raw.githubusercontent.com/pl643/eval_curl/main/bashrc)"
 
-# set EDITOR to whatever vi binary is installed, preffered vi listed in desending order
-for editor in pico nano vi vim nvim; do
-  which $editor > /dev/null 2>&1 && export EDITOR=$editor
-done
-
-# for bash-git & msys2 environment both installable with winget install
+# for bash-git & msys2 environment install with winget.exe install Git.Git; winget install MSYS2.MSYS2 
 # msys2 allows additional commands to be installed with pacman -S app
 msys() {
   # https://github.com/alacritty/alacritty/issues/1687 WindowsTermianal workaround for tmux in Git-bash & MSYS2
@@ -23,6 +18,11 @@ msys() {
   done
 }
 [ ! -z $MSYS ] && msys
+
+# set EDITOR to whatever vi binary is installed, preffered vi listed in desending order
+for editor in pico nano vi vim nvim; do
+  which $editor > /dev/null 2>&1 && export EDITOR=$editor
+done
 
 shopt -s autocd # change directory by typing path
 
