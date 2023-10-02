@@ -1,7 +1,7 @@
-# this bashrc is intended to be used with eval "$(curl -L https://raw.githubusercontent.com/pl643/eval_curl/main/bashrc)"
+# this bashrc is intended to be used with
+#  eval "$(curl -L https://raw.githubusercontent.com/pl643/eval_curl/main/bashrc)"
 
-# for bash-git & msys2 environment install with winget.exe install Git.Git; winget install MSYS2.MSYS2 
-# msys2 allows additional commands to be installed with pacman -S app
+#### function definations ####
 
 enable_direnv() {
   if which direnv > /dev/null 2>&1 ; then
@@ -21,7 +21,7 @@ msys() {
   [ -z $USER ] && USER=$(whoami)
  
   for path in /c/msys64/usr/bin /c/Users/$USER/OneDrive/winbin /c/Users/$USER/OneDrive/winbin/nvim-win64/bin; do
-    if [ -d $path ]; then
+    if test -d $path; then
        export PATH=$path:$PATH
        echo NOTE: $path added to PATH
     fi
@@ -33,14 +33,19 @@ set_editor() {
   for editor in pico nano vi vim nvim; do
     which $editor > /dev/null 2>&1 && export EDITOR=$editor
   done
-  echo EDITOR: $EDITOR
+  echo NOTE: $EDITOR exported to \$EDITOR
 }
 
 shopt -s autocd # change directory by typing path
 
 set -o vi       # vim cmdline editing (set -o emacs for default) 
 
-# calls msys if in a git-bash or msys environment
+##### execution starts here #####
+
+echo NOTE: https://raw.githubusercontent.com/pl643/eval_curl/main/bashrc
+
+# for bash-git & msys2 environment install with winget.exe install Git.Git; winget install MSYS2.MSYS2 
+# msys2 allows additional commands to be installed with pacman -S app
 [[ "$OSTYPE" == "msys" ]] && msys
 
 # EDITOR variable needed to be set before aliases are defined
@@ -71,4 +76,4 @@ alias sb='eval "$(curl -L https://raw.githubusercontent.com/pl643/eval_curl/main
 alias sr='ssh -l root'
 alias ssh="$(which ssh) -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
 
-echo NOTE: available features:  enable_direnv 
+echo NOTE: available features:  enable_direnv, a - select aliases with fzf
