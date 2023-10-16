@@ -67,6 +67,14 @@ dlfzf() {
   chmod +x fzf
 }
 
+# Downloads fzf into ~/.local/bin
+dllazygit() { 
+  localbin=~/.local/bin
+  [ -d $localbin ] && mkdir -p $localbin
+  cd $localbin
+  #https://github.com/jesseduffield/lazygit/releases/download/v0.40.2/lazygit_0.40.2_Linux_x86_64.tar.gz
+}
+
 # download tmux
 dltmux() { 
   localbin=~/.local/bin
@@ -118,7 +126,7 @@ alias e="$EDITOR"
 alias f='fg'
 alias h="$HOME_SAVED"
 alias j=jobs
-alias l='ls -lF'
+alias l='ls -hlF'
 alias s='ls -F'
 alias u='cd ..'
 alias v="$EDITOR"
