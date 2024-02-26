@@ -104,6 +104,8 @@ dlzoxide() {
 shopt -s autocd # change directory by typing path
 
 set -o vi       # vim cmdline editing (set -o emacs for default) 
+bind -m vi-command 'Control-l: clear-screen'
+bind -m vi-insert 'Control-l: clear-screen'
 
 ##### execution starts here #####
 
