@@ -123,7 +123,13 @@ set_editor
 f=~/.bash_aliases; [ -f $f ] && source $f
 
 # single letter aliases
-alias a='sel=$(alias|sed "s/alias //"|fzf); eval $(echo $sel|cut -f1 -d =)'
+alias al='sel=$(alias|sed "s/alias //"|fzf); eval $(echo $sel|cut -f1 -d =)'
+
+alias a='ansible'
+alias ai-'a -i'
+alias p='ansible-playbook'
+alisa pi-'p -i'
+
 alias b='cd -'
 alias e="$EDITOR"
 alias f='fg'
@@ -136,6 +142,7 @@ alias v="$EDITOR"
 
 # reload bashrc from url
 alias alb='export PATH=~/.local/bin:$PATH'
+alias apt='sudo apt -y'
 alias dlb='curl -o bashrc -L https://raw.githubusercontent.com/pl643/eval_curl/main/bashrc'
 alias git.config='git config user.name "Peter Ly"; git config user.email peter.wt.ly@gmail.com'
 alias f1='%1'
