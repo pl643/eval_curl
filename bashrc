@@ -126,7 +126,7 @@ f=~/.bash_aliases; [ -f $f ] && source $f
 alias al='sel=$(alias|sed "s/alias //"|fzf); eval $(echo $sel|cut -f1 -d =)'
 
 alias a='ansible'
-alias ai-'a -i'
+alias ai='a -i'
 alias p='ansible-playbook'
 alias pi-'p -i'
 
