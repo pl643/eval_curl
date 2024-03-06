@@ -128,7 +128,7 @@ alias al='sel=$(alias|sed "s/alias //"|fzf); eval $(echo $sel|cut -f1 -d =)'
 alias a='ansible'
 alias ai-'a -i'
 alias p='ansible-playbook'
-alisa pi-'p -i'
+alias pi-'p -i'
 
 alias b='cd -'
 alias e="$EDITOR"
