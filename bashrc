@@ -4,11 +4,12 @@
 #
 # Exports
 #
-if [ -z ${HOME_SAVED+x} ]; then
-  export HOME_SAVED=$HOME
-  export HOME=/tmp/.home.$USER
-  [ -d ~/.local/bin ] && export PATH=~/.local/bin:$PATH
-fi
+# if [ -z ${HOME_SAVED+x} ]; then
+#  export HOME_SAVED=$HOME
+#  export HOME=/tmp/.home.$USER
+#
+# fi
+[ -d ~/.local/bin ] && export PATH=~/.local/bin:$PATH
 
 # binaries tools
 # https://github.com/mosajjal/binary-tools
